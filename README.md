@@ -25,7 +25,13 @@ helm upgrade --install traefik traefik/traefik --create-namespace --namespace tr
 ### Set DNS entry
 
 ```bash
-
+curl --location --request POST "https://cf.infra.traefiklabs.tech/dns/env-on-demand" \
+--header "X-TraefikLabs-User: ${CLUSTERNAME}" \
+--header "Content-Type: application/json" \
+--header "Authorization: Bearer ${DNS_BEARER}" \
+--data-raw "{
+    \"Value\": \"$(kubectl get svc/traefik -n traefik --no-headers | awk {'print $4'})\"
+}"
 ```
 
 ### Deploy dashboard ingress

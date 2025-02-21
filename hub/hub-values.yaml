@@ -1,7 +1,7 @@
 
 image:
   registry: europe-west9-docker.pkg.dev/traefiklabs
-  repository: traefik/traefik-hub
+  repository: traefik-hub/traefik-hub
   tag: "v3.10.22-windowsservercore-ltsc2022-fips"
 deployment:
   replicas: 1
