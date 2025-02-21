@@ -19,7 +19,7 @@ kubectl create secret generic hub-license --from-literal=token="${HUB_TOKEN}" -n
 ### deploy Hub
 
 ```bash
-helm upgrade --install traefik traefik/traefik --create-namespace --namespace traefik --values hub/hub-values.yaml --set-json 'nodeSelector={"kubernetes.io/os": "windows"}' --set-json 'podSecurityContext=null' 
+helm upgrade --install traefik traefik/traefik --create-namespace --namespace traefik --values hub/hub-values.yaml --set-json 'nodeSelector={"kubernetes.io/os": "windows"}' --set-json 'podSecurityContext=null'
 ```
 
 ### Set DNS entry
